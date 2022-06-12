@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
+import { ConfigModule } from '@nestjs/config';
 
 describe('AppController (e2e)', () => {
   let app: INestApplication;
@@ -29,7 +30,7 @@ describe('AppController (e2e)', () => {
       .send(JSON.stringify({ equation: '2+3' }))
       .expect(201)
       .expect((res) => {
-        res.body.equation = '2+3';
+        (res.body.equation = '2+3'), (res.body.brand = 'Test Module');
       });
   });
 });

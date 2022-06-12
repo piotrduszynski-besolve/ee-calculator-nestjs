@@ -112,4 +112,7 @@ Simple and quick to deploy:
 ## Session Notes
 ## 1 Add Nestjs + Husky(4 minutes)
 - The same functionalities as with manual initialization from last approach + TS + Prittier and more
+## 2 Add equation input (13 minutes)
+- Generate controller and interfaces for calculator data - quick one
+
 
