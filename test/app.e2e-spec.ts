@@ -23,14 +23,14 @@ describe('AppController (e2e)', () => {
       .expect('Hello World!');
   });
 
-  it('/calculator (POST)', () => {
-    return request(app.getHttpServer())
+  it('/calculator (POST)', async () => {
+    const test = await request(app.getHttpServer())
       .post('/calculator')
       .set('Accept', 'application/json')
-      .send(JSON.stringify({ equation: '2+3' }))
-      .expect(201)
-      .expect((res) => {
-        (res.body.equation = '2+3'), (res.body.brand = 'Test Module');
-      });
+      .send({ equation: '2+3' })
+      .expect(201);
+
+    expect(test.body.brand).toBe('Test Brand');
+    expect(test.body.equation).toBe('2+3');
   });
 });

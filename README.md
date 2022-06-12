@@ -114,5 +114,7 @@ Simple and quick to deploy:
 - The same functionalities as with manual initialization from last approach + TS + Prittier and more
 ## 2 Add equation input (13 minutes)
 - Generate controller and interfaces for calculator data - quick one
+## 3 Add Json Branding (14 minutes)
+- Need to read about handling configuration in nestjs
 
 
