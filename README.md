@@ -88,7 +88,7 @@ I decided to try again with a different approach, as I spend to much time on set
 |**ID**|**Input Equation**            | **Calculate**         | **Display Result**         | **Memorize Equation** | **Clear** |
 |------|------------------------------|-----------------------|----------------------------|-----------------------|-----------|
 |1     |Endpoint to send equation     | Basic operations(+,-) | Add branding - JSON        |                       |           |
-|2     |Validate input string + trim  |                       | Add branding - ASCI art    |                       |           |
+|1.2   |Validate input string + trim  |                       | Add branding - ASCI art    |                       |           |
 |3     |                              | Basic operations(*,/) |                            |                       |           |
 |3.1   |                              |   Order of operations |                            |                       |           |
 |3.2   |                              |   Divide by 0         |                            |                       |           |
@@ -117,5 +117,7 @@ Simple and quick to deploy:
 ## 3 Add Json Branding (14 minutes)
 - Need to read about handling configuration in nestjs
 ## 4 Fixed E2E Test (4 minutes)
-
-
+## 5 Sum and minus operation(16 minutes)
+- I want to write calc from scratch, but I realized it's risky in 90 minutes to delivery product value for you.
+- Decided to use Mathjs
+- Updated stories
