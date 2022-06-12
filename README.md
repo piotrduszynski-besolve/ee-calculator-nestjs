@@ -128,7 +128,7 @@ I decided to try again with a different approach, as I spend to much time on set
 - I'll decide to skip ASCII art implementation
 ### 7 Add multiplication and division(30 minutes)
 - Some problems with tests that throws exception for Infinity.
-- There was a need to add Infinity handling for dividing by zero. It's how it works in Math.js. I need to  read about it
+- There was a need to add Infinity handling for dividing by zero. It's how it works in Math.js. I needed to  read about it
 - Concentration was not so good as at the beginning
 
 ## Retrospective
