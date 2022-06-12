@@ -43,7 +43,7 @@ $ npm run test:cov
 ## Note about last approach
 I did a first try to the exercise here: https://github.com/piotrduszynski-besolve/ee-calculator
 
-I decided to try again with a different approach, as I spend to much time on setup the project stack. Now I'm building projects based on nestjs, which speeds up the development phase significantly, thanks to build-in generators for setup project and generate project files.
+I decided to try again with a different approach, as I spend to much time on setup the project tech stack. I decided to build a project based on nestjs, which speeds up the development phase significantly, thanks to build-in generators for setup projects and project files.
 ## Product Analyzes
 ### Business requirements
 #### Product requirements
@@ -63,24 +63,22 @@ I decided to try again with a different approach, as I spend to much time on set
 #### Technical Requirements
 - coding exercise no more than 90 minutes, code like for the paying client - what compromises I would take.
     
-    I've spent some time before starting the coding on analyzes, in the meantime before starting coding exercise. It was hard to find 2h of efficient time to do it. So I had a lot of thoughts before starting. 
-    Then did the coding. I decided to split time into 15 minutes sessions maximum. To keep on track of what progress I made and do I need to change a plan o execution.
+    I've spent in the meantime 0,5h before starting the coding on the project analysis. I also decided to split time into 15 minutes sessions maximum. To keep on track of what progress I made and do I need to change a plan o execution.
 - Required: Test Coverage, Simplicity, Self-explanatory code
 - Include Readme 
 - Include the Version number
 
 ### How to deliver business value quickly
-- Backend endpoint-based calc as the first stage
-- 3rd party calc - https://mathjs.org/ https://nerdamer.com/ , https://www.npmjs.com/package/static-eval
+- Calculation backend endpoint in the first stage
+- 3rd party calc - https://mathjs.org/, https://nerdamer.com/ , https://www.npmjs.com/package/static-eval
 - eval could be used to calc equation from a string, but executing JavaScript from a string can lead to an enormous security risk.
 - ASCI Art -> Equal Expert Branding
 - Server rendered calc webpage
-- nestjs as framework- easy and quick to use, embedded server rendering, build in generator for project and files
+- nestjs as framework - easy and quick to use, embedded server rendering, build in generator for project and files
 
 ### Risks
 - Small amount of time -> 15 minutes coding sessions
-- That can lead to problem with implementing 2 tasks that are in my opinion must have:
-  
+- The small amount of time can lead to problems with the implementation of 2 important tasks(in my opinion):  
   - deployment
   - product analytics/metrics
 
@@ -99,42 +97,43 @@ I decided to try again with a different approach, as I spend to much time on set
 #### CI
 - husky + nestjs
 - Create app artifacts using Github Releases
-- If MVP is created, think about adding Github action for CI
-- If MVP is created, think about the creation of an artifact as a Docker image in GitHub Container Registry
+- When MVP is created, think about adding Github action for CI
+- When MVP is created, think about the creation of an artifact as a Docker image in GitHub Container Registry
 #### CD
-Simple and quick to deploy:
-- Manual releases to AWS Lightsail
-- If MVP is created, add deployment via AWS Pipeline
-- If MVP is created, add IaC
+- Manual release to AWS Lightsail
+- When MVP is created, add deployment via AWS Pipeline
+- When MVP is created, add IaC
 ### Product Monitoring
- - If MVP is created, add Mixpanel
+ - When MVP is created, add Mixpanel
  
 ## Session Notes
 ### 1 Add Nestjs + Husky(4 minutes)
-- The same functionalities as with manual initialization from last approach + TS + Prittier and more
-### 2 Add equation input (13 minutes)
-- Generate controller and interfaces for calculator data - quick one
-### 3 Add Json Branding (14 minutes)
-- Need to read about handling configuration in nestjs
+- The same functionalities as with manual initialization from the last approach + TS + Prittier and more
+### 2 Added equation input (13 minutes)
+- I generated controller and interfaces for calculator data - a quick one to do
+### 3 Added Json Branding (14 minutes)
+- I needed to read about handling configuration in nestjs
 ### 4 Fixed E2E Test (4 minutes)
 ### 5 Sum and minus operation(16 minutes)
-- I want to write calc from scratch, but I realized it's risky in 90 minutes to delivery product value for you.
+- I wanted to write calc from scratch, but I realized it's risky in 90 minutes to deliver product value for you.
 - Decided to use Mathjs
 - Updated stories
 ### 6 Equation validator + calculation service(35 minutes)
-- Problem with some mocking. I decided to use different approach with providers
-- Problem with one line regex.
+- I had a problem with mocking. I decided to use a different approach with module providers
+- Problem with one line regex for the equation.
 - Simple task changed in some refactoring and additional tasks.
-- Equation input is retuning a number. That should be changed to string.
-- I'll skip ASCII art 
+- Equation input is returning a number. That should be changed to string.
+- I'll decide to skip ASCII art implementation
 ### 7 Add multiplication and division(30 minutes)
 - Some problems with tests that throws exception for Infinity.
-- Need to add Infinity handling for divide by zero. It works like that in Math.js and read about it
+- There was a need to add Infinity handling for dividing by zero. It's how it works in Math.js. I need to  read about it
 - Concentration was not so good as at the beginning
 
 ## Retrospective
-- After about an hour I started to feel a degradation of concentration. It's not efficient to work this way. I decided to split an exercise into sessions, and between them try to write notes and rethink the coding approach, which finally end up in 2h exercise on a high concentration level. On the other hand, sessions helped me to decide on how to progress and rethink the current approach.
-- Preparing a plan(story mapping) beforehand was the bull's eye. Gives me the ability to focus on development.
-- Nestjs was a risky choice as I'm not very expired in it. Any mistake or bigger problems could lead to time waste. However build-in generators save me a lot of time.
+
+- After about an hour I started to feel a degradation of concentration. It's not efficient to work this way for long-term development. I decided to split an exercise into sessions, and between them try to write notes and rethink the coding approach, which finally end up in 2h exercise on a high concentration level. On the other hand, sessions helped me to decide on how to progress and rethink the current approach.
+- Preparing a plan(story mapping) beforehand was the bull's eye. It gave me the ability to focus on development.
+- Nestjs was a risky choice as I'm not very experienced in it. Any mistake or bigger problems could lead to time waste. However build-in generators save me a lot of time.
 - Time was very short, so I think the code would require some refactoring(name changes, and maybe some simplifications)
+
 
