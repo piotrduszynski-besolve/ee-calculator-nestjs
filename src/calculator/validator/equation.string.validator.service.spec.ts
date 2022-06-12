@@ -14,8 +14,16 @@ describe('EquationStringValidatorService', () => {
     );
   });
 
-  it.each(['2+2-2', '2.0+2.0-2.0'])(
-    'should validate equation that contains basic integer operations for %p',
+  it.each([
+    '2+2-2',
+    '2.0+2.0-2.0',
+    '2*2',
+    '2/2',
+    '2.0*2.0/2.0',
+    '2*2/2+2-2',
+    '2.0*2.0/2.0+2.0-2.0',
+  ])(
+    'should validate equation that contains basic plus minus operations for %p',
     (correctEquation: string) => {
       //given
       //when
@@ -31,12 +39,10 @@ describe('EquationStringValidatorService', () => {
     'a+f-2',
     '.0+2.0-2.0',
     '0.+2.0-2.0',
-    '2*2',
-    '2/2',
-    '(2+2)*2',
+    '(2+2)/2',
     '-2+3',
   ])(
-    'should not validate equation that contains basic integer operations for %p',
+    'should not validate equation that contains basic plus and minus operations for %p',
     (correctEquation: string) => {
       //given
       //when

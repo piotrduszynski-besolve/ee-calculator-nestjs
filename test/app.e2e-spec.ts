@@ -2,7 +2,6 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
-import { ConfigModule } from '@nestjs/config';
 
 describe('AppController (e2e)', () => {
   let app: INestApplication;
@@ -43,5 +42,15 @@ describe('AppController (e2e)', () => {
       .expect(201);
 
     expect(test.body.msg).toBe('Wrong Equation: 2+a');
+  });
+
+  it('/calculator (POST) - divide by zero', async () => {
+    const test = await request(app.getHttpServer())
+      .post('/calculator')
+      .set('Accept', 'application/json')
+      .send({ equation: '2/0' })
+      .expect(201);
+
+    expect(test.body.msg).toBe('Wrong Equation: 2/0');
   });
 });

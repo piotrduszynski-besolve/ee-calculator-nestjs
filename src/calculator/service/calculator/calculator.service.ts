@@ -11,9 +11,11 @@ export class CalculatorService {
 
   calculate(equation: string): number {
     if (this.equationValidator.validate(equation)) {
-      return this.evaluateEquation.evaluate(equation);
-    } else {
-      throw Error('Wrong Equation: ' + equation);
+      const result = this.evaluateEquation.evaluate(equation);
+      if (result !== Infinity) {
+        return result;
+      }
     }
+    throw Error('Wrong Equation: ' + equation);
   }
 }

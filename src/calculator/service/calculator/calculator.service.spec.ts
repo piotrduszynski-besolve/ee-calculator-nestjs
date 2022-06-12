@@ -8,17 +8,24 @@ type MockType<T> = {
 };
 const equation = '2+2';
 const badEquation = '2+a';
+const divideByZero = '2/0';
 
 const validatorMockFactory: () => MockType<EquationStringValidatorService> =
   jest.fn(() => ({
     validate: jest.fn((str: string) => {
       if (str === equation) return true;
+      if (str === divideByZero) return true;
       if (str === badEquation) return false;
     }),
   }));
 
 const evaluatorMockFactory: () => MockType<EvaluateEquation> = jest.fn(() => ({
-  evaluate: jest.fn((str: string) => 5),
+  evaluate: jest.fn((str: string) => {
+    if (str === divideByZero) {
+      return Infinity;
+    }
+    return 5;
+  }),
 }));
 
 describe('CalculatorService', () => {
@@ -65,5 +72,14 @@ describe('CalculatorService', () => {
     expect(() => {
       service.calculate(badEquation);
     }).toThrow('Wrong Equation: 2+a');
+  });
+
+  it('should calculate throw an error when equation result is infinity', () => {
+    //given
+    //when
+    //then
+    expect(() => {
+      service.calculate(divideByZero);
+    }).toThrow('Wrong Equation: 2/0');
   });
 });

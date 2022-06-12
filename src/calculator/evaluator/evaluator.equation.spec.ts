@@ -31,4 +31,30 @@ describe('EvaluateEquation', () => {
     expect(result).toBeLessThanOrEqual(2.00000000000011);
     expect(result).toBeGreaterThanOrEqual(2.0000000000001);
   });
+
+  it('evaluate should multiple integers', () => {
+    expect(service.evaluate('2*2')).toStrictEqual(4);
+  });
+
+  it('evaluate should multiple floats', () => {
+    const result = service.evaluate('4.0000000000001*2.0');
+    expect(result).toBeLessThanOrEqual(8.0000000000002);
+    expect(result).toBeGreaterThanOrEqual(8.0000000000001);
+  });
+
+  it('evaluate should divide integers', () => {
+    expect(service.evaluate('2/2')).toStrictEqual(1);
+  });
+
+  it('evaluate should floats integers', () => {
+    expect(service.evaluate('2.0/2.0')).toStrictEqual(1);
+  });
+
+  it('evaluate should consider operations order', () => {
+    expect(service.evaluate('2+2*2')).toStrictEqual(6);
+  });
+
+  it('evaluate should not divide by 0', () => {
+    expect(service.evaluate('2/0')).toBe(Infinity);
+  });
 });

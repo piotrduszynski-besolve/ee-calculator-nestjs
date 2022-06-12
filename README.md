@@ -121,3 +121,9 @@ Simple and quick to deploy:
 - I want to write calc from scratch, but I realized it's risky in 90 minutes to delivery product value for you.
 - Decided to use Mathjs
 - Updated stories
+## 6 Equation validator + calculation service(35 minutes)
+- Problem with some mocking. I decided to use different approach with providers
+- Problem with one line regex.
+- Simple task changed in some refactoring and additional tasks.
+- Equation input is retuning a number. That should be changed to string.
+- I'll skip ASCII art 

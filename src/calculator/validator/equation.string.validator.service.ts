@@ -6,7 +6,7 @@ const floatNumberRegex = /^([0-9](\.[0-9]+)?|[0-9]+)$/;
 export class EquationStringValidatorService {
   validate(stringEquation: string): boolean {
     return stringEquation
-      .split(/[+,-]/)
+      .split(/[*,\/,+,-]/)
       .every((splittedStr) => floatNumberRegex.test(splittedStr));
   }
 }
