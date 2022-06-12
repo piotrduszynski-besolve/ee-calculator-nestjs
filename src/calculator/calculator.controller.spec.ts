@@ -1,9 +1,11 @@
 import { ConfigModule } from '@nestjs/config';
 import { Test, TestingModule } from '@nestjs/testing';
 import { CalculatorController } from './calculator.controller';
+import { EvaluateEquation } from './evaluate/evaluate.equation';
 
 describe('CalculatorController', () => {
   let controller: CalculatorController;
+  const expectedEquationResult = 10;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -13,7 +15,15 @@ describe('CalculatorController', () => {
           envFilePath: '.test.env',
         }),
       ],
-    }).compile();
+    })
+      .useMocker((token) => {
+        if (token === EvaluateEquation) {
+          return {
+            evaluate: jest.fn().mockReturnValue(expectedEquationResult),
+          };
+        }
+      })
+      .compile();
 
     controller = module.get<CalculatorController>(CalculatorController);
   });
@@ -28,6 +38,7 @@ describe('CalculatorController', () => {
       expect.objectContaining({
         equation,
         brand: expect.any(String),
+        result: expect.any(Number),
       }),
     );
   });
@@ -38,9 +49,26 @@ describe('CalculatorController', () => {
     //when
     const calculatorResults = controller.postCalculation({ equation: '' });
     //then
-    expect(calculatorResults).toMatchObject({
-      equation: '',
-      brand,
-    });
+    expect(calculatorResults).toEqual(
+      expect.objectContaining({
+        equation: expect.any(String),
+        brand,
+        result: expect.any(Number),
+      }),
+    );
+  });
+
+  it('should return result', () => {
+    //given
+    //when
+    const calculatorResults = controller.postCalculation({ equation: '' });
+    //then
+    expect(calculatorResults).toEqual(
+      expect.objectContaining({
+        equation: expect.any(String),
+        brand: expect.any(String),
+        result: expectedEquationResult,
+      }),
+    );
   });
 });

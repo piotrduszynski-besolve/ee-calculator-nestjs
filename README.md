@@ -116,5 +116,6 @@ Simple and quick to deploy:
 - Generate controller and interfaces for calculator data - quick one
 ## 3 Add Json Branding (14 minutes)
 - Need to read about handling configuration in nestjs
+## 4 Fixed E2E Test (4 minutes)
 
 

@@ -32,5 +32,6 @@ describe('AppController (e2e)', () => {
 
     expect(test.body.brand).toBe('Test Brand');
     expect(test.body.equation).toBe('2+3');
+    expect(test.body.result).toBe(5);
   });
 });
