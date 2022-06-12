@@ -110,25 +110,31 @@ Simple and quick to deploy:
  - If MVP is created, add Mixpanel
  
 ## Session Notes
-## 1 Add Nestjs + Husky(4 minutes)
+### 1 Add Nestjs + Husky(4 minutes)
 - The same functionalities as with manual initialization from last approach + TS + Prittier and more
-## 2 Add equation input (13 minutes)
+### 2 Add equation input (13 minutes)
 - Generate controller and interfaces for calculator data - quick one
-## 3 Add Json Branding (14 minutes)
+### 3 Add Json Branding (14 minutes)
 - Need to read about handling configuration in nestjs
-## 4 Fixed E2E Test (4 minutes)
-## 5 Sum and minus operation(16 minutes)
+### 4 Fixed E2E Test (4 minutes)
+### 5 Sum and minus operation(16 minutes)
 - I want to write calc from scratch, but I realized it's risky in 90 minutes to delivery product value for you.
 - Decided to use Mathjs
 - Updated stories
-## 6 Equation validator + calculation service(35 minutes)
+### 6 Equation validator + calculation service(35 minutes)
 - Problem with some mocking. I decided to use different approach with providers
 - Problem with one line regex.
 - Simple task changed in some refactoring and additional tasks.
 - Equation input is retuning a number. That should be changed to string.
 - I'll skip ASCII art 
-## 7 Add multiplication and division(30 minutes)
+### 7 Add multiplication and division(30 minutes)
 - Some problems with tests that throws exception for Infinity.
 - Need to add Infinity handling for divide by zero. It works like that in Math.js and read about it
 - Concentration was not so good as at the beginning
+
+## Retrospective
+- After about an hour I started to feel a degradation of concentration. It's not efficient to work this way. I decided to split an exercise into sessions, and between them try to write notes and rethink the coding approach, which finally end up in 2h exercise on a high concentration level. On the other hand, sessions helped me to decide on how to progress and rethink the current approach.
+- Preparing a plan(story mapping) beforehand was the bull's eye. Gives me the ability to focus on development.
+- Nestjs was a risky choice as I'm not very expired in it. Any mistake or bigger problems could lead to time waste. However build-in generators save me a lot of time.
+- Time was very short, so I think the code would require some refactoring(name changes, and maybe some simplifications)
 
