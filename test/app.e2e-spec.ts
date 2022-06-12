@@ -34,4 +34,14 @@ describe('AppController (e2e)', () => {
     expect(test.body.equation).toBe('2+3');
     expect(test.body.result).toBe(5);
   });
+
+  it('/calculator (POST) - wrong equation', async () => {
+    const test = await request(app.getHttpServer())
+      .post('/calculator')
+      .set('Accept', 'application/json')
+      .send({ equation: '2+a' })
+      .expect(201);
+
+    expect(test.body.msg).toBe('Wrong Equation: 2+a');
+  });
 });
