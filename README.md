@@ -40,6 +40,8 @@ $ npm run test:cov
 ```
 # Analyzes
 
+I spent in the meantime about 0,5h before starting the coding on the project analysis and did below notes.
+
 ## Note about last approach
 I did a first try to the exercise here: https://github.com/piotrduszynski-besolve/ee-calculator
 
@@ -63,7 +65,7 @@ I decided to try again with a different approach, as I spend to much time on set
 #### Technical Requirements
 - coding exercise no more than 90 minutes, code like for the paying client - what compromises I would take.
     
-    I've spent in the meantime 0,5h before starting the coding on the project analysis. I also decided to split time into 15 minutes sessions maximum. To keep on track of what progress I made and do I need to change a plan o execution.
+     I decided to split time into 15 minutes sessions maximum. To keep on track of what progress I made and do I need to change a plan o execution.
 - Required: Test Coverage, Simplicity, Self-explanatory code
 - Include Readme 
 - Include the Version number
