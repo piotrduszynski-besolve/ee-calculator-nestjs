@@ -110,4 +110,6 @@ Simple and quick to deploy:
  - If MVP is created, add Mixpanel
  
 ## Session Notes
+## 1 Add Nestjs + Husky(4 minutes)
+- The same functionalities as with manual initialization from last approach + TS + Prittier and more
 

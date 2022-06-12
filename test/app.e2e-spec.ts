@@ -21,4 +21,15 @@ describe('AppController (e2e)', () => {
       .expect(200)
       .expect('Hello World!');
   });
+
+  it('/calculator (POST)', () => {
+    return request(app.getHttpServer())
+      .post('/calculator')
+      .set('Accept', 'application/json')
+      .send(JSON.stringify({ equation: '2+3' }))
+      .expect(201)
+      .expect((res) => {
+        res.body.equation = '2+3';
+      });
+  });
 });
