@@ -127,3 +127,8 @@ Simple and quick to deploy:
 - Simple task changed in some refactoring and additional tasks.
 - Equation input is retuning a number. That should be changed to string.
 - I'll skip ASCII art 
+## 7 Add multiplication and division(30 minutes)
+- Some problems with tests that throws exception for Infinity.
+- Need to add Infinity handling for divide by zero. It works like that in Math.js and read about it
+- Concentration was not so good as at the beginning
+
