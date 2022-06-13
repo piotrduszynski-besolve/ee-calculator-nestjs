@@ -42,6 +42,11 @@ $ npm run test:cov
 
 On production .env file should be created based on .test.env
 
+## How to use
+
+The calculator is available after starting under http://localhost:3000/calculator. 
+You should send a body with an equation like this: { "equation": "2+3" }
+
 # Analyzes
 
 I spent in the meantime about 0,5h before starting the coding on the project analysis and did below notes.
