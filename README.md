@@ -45,7 +45,7 @@ On production .env file should be created based on .test.env
 ## How to use
 
 The calculator is available after starting under http://localhost:3000/calculator. 
-You should send a body with an equation like this: { "equation": "2+3" }
+You should send a POST with a the folowing body: { "equation": "2+3" }
 
 # Analyzes
 
