@@ -38,6 +38,10 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+## Production deployment
+
+On production .env file should be created based on .test.env
+
 # Analyzes
 
 I spent in the meantime about 0,5h before starting the coding on the project analysis and did below notes.
